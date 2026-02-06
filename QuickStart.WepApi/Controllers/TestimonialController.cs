@@ -7,48 +7,49 @@ namespace QuickStart.WepApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ServiceController : ControllerBase
+    public class TestimonialController : ControllerBase
     {
         private readonly QuickStartContext _context;
 
-        public ServiceController(QuickStartContext context)
+        public TestimonialController(QuickStartContext context)
         {
             _context = context;
         }
 
+
         [HttpGet]
-        public IActionResult ServiceList()
+
+        public IActionResult TestimonialList()
         {
-            var value=_context.Services.ToList();
+            var value=_context.Testimonials.ToList();
             return Ok(value);
         }
 
         [HttpPost]
 
-        public IActionResult CreateService(Service service)
+        public IActionResult CreateTestimonial(Testimonial testimonial)
         {
-            _context.Services.Add(service);
+            _context.Testimonials.Add(testimonial);
             _context.SaveChanges();
-            return Ok("ekleme işlemi başarı ile gerçekleşti");
+            return Ok("Ekleme işlemi başarı ile gerçekleşti :)");
         }
 
         [HttpPut]
-        public IActionResult UpdateService(Service service)
+
+        public IActionResult UpdateTestimonial(Testimonial testimonial)
         {
-            _context.Services.Update(service);
+            _context.Testimonials.Update(testimonial);
             _context.SaveChanges();
             return Ok("Güncelleme işlemi başarı ile gerçekleşti");
         }
 
         [HttpDelete]
-
-        public IActionResult DeleteService(int id)
+        public IActionResult DeleteTestimonial(int id)
         {
-            var value = _context.Services.Find(id);
-            _context.Services.Remove(value);
+            var value = _context.Testimonials.Find(id);
+            _context.Testimonials.Remove(value);
             _context.SaveChanges();
             return Ok("Silme işlemi başarı ile gerçekleşti");
-
         }
     }
 }
