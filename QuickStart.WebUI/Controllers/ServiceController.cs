@@ -72,6 +72,25 @@ namespace QuickStart.WebUI.Controllers
 
         }
 
+        [HttpPost]
+
+        public async Task<IActionResult> UpdateService(UpdateServiceDto model)
+        { 
+            var client = _httpClientFactory.CreateClient();
+
+            var jsonData = JsonConvert.SerializeObject(model); //text->json
+
+            var content = new StringContent(jsonData, Encoding.UTF8, "application/json");
+
+            var response = await client.PutAsync("https://localhost:7051/api/Service", content);
+
+            if (response.IsSuccessStatusCode)
+            {
+                return RedirectToAction("Index");
+            }
+            return View(model);
+
+        }
 
     }
 }
