@@ -23,6 +23,13 @@ namespace QuickStart.WepApi.Controllers
             return Ok(value);
         }
 
+        [HttpGet("{id}")]
+        public IActionResult GetById(int id)
+        {
+            var Service = _context.Services.Find(id);
+            return Ok(Service);
+        }
+
         [HttpPost]
 
         public IActionResult CreateService(Service service)
