@@ -92,5 +92,22 @@ namespace QuickStart.WebUI.Controllers
 
         }
 
+        public async Task<IActionResult> DeleteService(int id)
+        {
+            var client=_httpClientFactory.CreateClient();
+
+            var response = await client.DeleteAsync("https://localhost:7051/api/Service?id=" + id);
+
+            if (response.IsSuccessStatusCode)
+            {
+                return RedirectToAction("Index");
+
+            }
+
+            return BadRequest();
+
+        }
+
+
     }
 }
