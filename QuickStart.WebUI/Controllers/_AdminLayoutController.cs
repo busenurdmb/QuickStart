@@ -2,7 +2,7 @@
 
 namespace QuickStart.WebUI.Controllers
 {
-    public class _AdminLayout : Controller
+    public class _AdminLayoutController : Controller
     {
         public IActionResult Index()
         {
