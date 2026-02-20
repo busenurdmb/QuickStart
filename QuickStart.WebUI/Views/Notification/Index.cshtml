@@ -32,15 +32,15 @@
                                 <td>@item.content</td>
                                 <td>@item.notificationTypeName</td>
                                 <td>@(item.isRead ? "Okundu" : "Okunmadı")</td>
-                                <td><a href="/Service/DeleteService/@item.notificationId" class="btn btn-danger">Sil</a></td>
-                                <td><a href="/Service/UpdateService/@item.notificationId" class="btn btn-success">Güncelle</a></td>
+                                <td><a href="/Notification/DeleteNotification/@item.notificationId" class="btn btn-danger">Sil</a></td>
+                                <td><a href="/Notification/UpdateNotification/@item.notificationId" class="btn btn-success">Güncelle</a></td>
                             </tr>
                         }
 
 
                     </tbody>
                 </table>
-                <a href="/Testimonial/UpdateTestimonial" class="btn btn-success">Yeni Bildirim Ekleme Sayfası</a>
+                <a href="/Notification/UpdateNotification" class="btn btn-success">Yeni Bildirim Ekleme Sayfası</a>
             </div>
         </div>
     </div>
