@@ -30,3 +30,8 @@ namespace QuickStart.WebUI.ViewComponents
         }
     }
 }
+
+//Api verileri Json formatı
+//input veya listeleme kısmı Text
+//json-text ->Deserialize
+//text-json->Serialize
