@@ -31,8 +31,8 @@ namespace QuickStart.WepApi.Controllers
             return Ok(values);
         }
 
-        [HttpGet("3")]
-        public IActionResult GetNotificationListwithNotificationType()
+        [HttpGet("GetNotificationListwithNotificationType")]
+        public IActionResult NotificationList()
         {
             var values = _context.Notifications.Include(x => x.NotificationType).Select(x => new ResultNotificationWithNotificationTypeDto
             {
